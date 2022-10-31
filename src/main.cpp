@@ -515,9 +515,9 @@ void alarm(){
     measures[PITCH] = mpu.getAngleY();
 
     // Apply low-pass filter (10Hz cutoff frequency)
-    angular_motions[ROLL]  = 0.7 * angular_motions[ROLL]  + 0.3 * mpu.getGyroX() / 65.5;
-    angular_motions[PITCH] = 0.7 * angular_motions[PITCH] + 0.3 * mpu.getGyroY() / 65.5;
-    angular_motions[YAW]   = 0.7 * angular_motions[YAW]   + 0.3 * mpu.getGyroZ() / 65.5;
+    angular_motions[ROLL]  = 0.7 * angular_motions[ROLL]  + 0.3 * mpu.getGyroX();
+    angular_motions[PITCH] = 0.7 * angular_motions[PITCH] + 0.3 * mpu.getGyroY();
+    angular_motions[YAW]   = 0.7 * angular_motions[YAW]   + 0.3 * mpu.getGyroZ();
 
     convertBleToPulse();
 
